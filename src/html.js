@@ -1,7 +1,7 @@
 module.exports.main = function () {
     return template(`
     <h1>Last.fm status</h1>
-    <p>You can use <code>/api/username</code> to get a json response and <code>/user/username</code> to get html reponse.
+    <p>You can use <code>/api/username</code> to get a json response and <code>/user/username</code> to get a html response.
     Example: <code>/user/i0l</code></p>
     `);
 }
