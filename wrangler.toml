@@ -9,4 +9,4 @@ env = { }
 crons = [ ]
 
 [vars]
-API_KEY = "your lastfm api key here"
+API_KEY = "replace me"

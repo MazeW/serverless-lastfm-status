@@ -1,4 +1,4 @@
-const html = require('./html.js');
+import { info, error, main } from './html.js';
 
 const initJson = {
   headers: {
@@ -36,17 +36,17 @@ async function handleRequest(request) {
 
   if (path == "user") {
     return new Response(((user.length != 0 && user != "undefined") ?
-      html.info(await getSongInfo(user)) : html.error("Please specify your Last.fm username")),
+      info(await getSongInfo(user)) : error("Please specify your Last.fm username")),
       initHtml);
   }
 
-  return new Response(html.main(), initHtml);
+  return new Response(main(), initHtml);
 }
 
 addEventListener("fetch", (event) => {
   event.respondWith(
     handleRequest(event.request).catch(
-      (err) => new Response(err.stack, { status: 500 })
+      (err) => new Response(error("something went wrong."), initHtml)
     )
   );
 });
